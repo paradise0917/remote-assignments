@@ -15,7 +15,7 @@ html,body{
 
 
 /* flex setting */
-
+.header-wrapper,
 .nav-style,
 .nav-title,
 .nav-menu ul,
@@ -42,6 +42,7 @@ html,body{
 }
 
 .footer-bottom,
+.footer-bottom-wrapper,
 .footer-bottom-left,
 .footer-bottom-right{
     display: flex;
@@ -125,10 +126,14 @@ html,body{
     bottom:10px;
 }
 
-
-
-
 /*  header  */
+
+.header-wrapper,
+.footer-bottom-wrapper{
+    max-width: 1360px;
+    width:100%;
+    margin:auto;
+}
 
 .nav-menu-icon,
 .nav-title-min{
