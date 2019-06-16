@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/touch-icon.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Style.css"/>
     <title>​Google Developers</title>
 </head>
 <body>
     <header>
-        <nav class="nav-style">
+        <nav id="nav-fix" class="nav-style">
+            <div class="nav-menu-icon">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="#878787" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                </svg>
+            </div>
+            <div class="nav-title-min">
+                <span>Google Developers</span>
+            </div>
             <div class="nav-title">
                 <img alt="title-img" src="img/GoogleTitleImg.png" class="title-img"/>
             </div>
@@ -190,18 +200,35 @@
         </div>
     </footer>
     <footer class="footer-bottom">
-        <div class="ddl-language">
-            <span>LANGUAGE</span>
-            <svg viewBox="0 0 24 24">
-                <path fill="#000" d="M7,10L12,15L17,10H7Z" />
-            </svg>
+        <div class="footer-bottom-left">
+            <div class="ddl-language">
+                <span>LANGUAGE</span>
+                <svg viewBox="0 0 24 24">
+                    <path fill="#000" d="M7,10L12,15L17,10H7Z" />
+                </svg>
+            </div>
+            <div class="footer-bottom-link">
+                <a>條款</a>|
+                <a>隱私權</a>
+            </div>
         </div>
-        <div class="footer-bottom-link">
-            <a>條款</a>|
-            <a>隱私權</a>
+        <div class="footer-bottom-right">
+            <span class="span-subscription">訂閱 Google Developers 電子報</span>
+            <input type="button" value="訂閱" class="input-subscription"/>
         </div>
-        <span class="span-subscription">訂閱 Google Developers 電子報</span>
-        <input type="button" value="訂閱" class="input-subscription"/>
     </footer>
 </body>
 </html>
+<script>
+
+    //dynamic box-shadow while scrolling
+    document.addEventListener("scroll",function(){
+    let headerMsgHeight=document.querySelector(".header-msg").offsetHeight;
+        if(document.body.scrollTop >= headerMsgHeight || document.documentElement.scrollTop>= headerMsgHeight){
+            document.querySelector("#nav-fix").classList.add("nav-shadow");
+        }else{
+            document.querySelector("#nav-fix").classList.remove("nav-shadow");
+        }   
+    }
+);
+</script>
