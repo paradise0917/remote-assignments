@@ -169,6 +169,7 @@ header .header-msg > span{
         height: 100vh;
         padding:20px 10px;
         background-color: #fff;
+        border-left:solid 1px #ccc;
         z-index: 2;
         display: none;
     }
