@@ -75,7 +75,7 @@ function Method3(){
 }
 console.log("Method 3. ");
 Ans = calculate(Method3())
-console.log("Method 3 Result. ",Ans);
+console.log("Method 3 Result. " ,Ans);
 
 // ------------------------------------------
 // Assignment 3: Function, Array, and Object
@@ -89,9 +89,9 @@ console.log("Q1. return price average");
 Ans = avg({
         size:3,
         products:[
-            {name:"Product 1",price:100},
-            {name:"Product 2",price:700},
-            {name:"Product 3",price:250}]
+            {name:"Product 1" ,price:100},
+            {name:"Product 2" ,price:700},
+            {name:"Product 3" ,price:250}]
     });
 console.log("A1. " ,Ans);
 
@@ -106,6 +106,7 @@ function twoSum(nums,target){
                 return [i,j];
         }
     }
+    return "No matching items found in array.";
 }
 
 console.log("Q1. twoSum([2, 7, 11, 15], 9)");
