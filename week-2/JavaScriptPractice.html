@@ -58,7 +58,7 @@ Ans = calculate({op : "+" ,n1 : 3 ,n2 : 5});
 console.log("Method 1 Result. " ,Ans);
 
 // Method 2
-var Method2 = new Object();
+let Method2 = new Object();
 Method2.op = '+';
 Method2.n1 = 6;
 Method2.n2 = 10;
@@ -67,14 +67,14 @@ Ans = calculate(Method2);
 console.log("Method 2 Result. " ,Ans);
 
 // Method 3
-function Method3(){
+let Method3 =new function M3(){
     this.op = "-";
     this.n1 = 7;
     this.n2 = 10;
     return this;
 }
 console.log("Method 3. ");
-Ans = calculate(Method3())
+Ans = calculate(Method3);
 console.log("Method 3 Result. " ,Ans);
 
 // ------------------------------------------
