@@ -82,7 +82,7 @@ console.log("Method 3 Result. " ,Ans);
 // ------------------------------------------
 console.log("%c Assignment 3: Function, Array, and Object","color: #4f3a65; background-color: #dff0ea;");
 function avg(data){
-    return data.products.reduce((total, next) => total + next.price, 0) / data.size;    
+    return data.products.reduce((total, next) => total + next.price, 0) / data.products.length;    
 }
 
 console.log("Q1. return price average");
