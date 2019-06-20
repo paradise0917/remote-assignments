@@ -1,0 +1,192 @@
+/*  Base Layout */
+
+*{
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size:1rem;
+    box-sizing: border-box;
+}
+
+html,body{
+    margin:0;
+}
+
+input[type=button]{
+    background-color: rgb(214,234,254);
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    width: 120px;
+    margin:20px;
+    cursor: pointer;
+}
+
+h3{
+    font-size: 1.3rem;
+    line-height: 1.7;
+}
+
+
+/*  Nav Style */ 
+.nav-style,
+.nav-style > .nav-menu ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+ }
+
+.nav-style{
+    background-color: rgb(234,234,234);
+    padding:0px 30px;
+    justify-content: flex-end;
+}
+
+.nav-style > div{
+    margin: 15px 0px;
+}
+
+.nav-style > .nav-title{
+    
+    margin-right: auto;
+}
+
+.nav-style > .nav-img svg{
+    width:20px;
+    height:20px;
+    cursor: pointer;
+}
+
+
+.nav-style > .nav-close-img{
+    position: fixed;
+    z-index: 3;
+    top:10px;
+    right:10px;
+    margin:0;
+    cursor: pointer;
+    display: none;
+
+}
+
+.nav-menu > ul{
+    list-style-type:none;
+    margin:0;
+    padding: 0;
+}
+
+.nav-menu > ul > li{
+    margin:0px 15px;
+}
+
+
+/*  Header Msg */ 
+header .header-msg{
+    height: 200px;
+    line-height: 200px;
+    background-color: rgb(193,213,233);
+    text-align: center;
+}
+
+header .header-msg > span{
+    display:inline-block; 
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+/*  Main Content Box */ 
+.main-content{
+    text-align: center;
+    justify-content:center;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.main-content .content-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.main-content .content-box > div{
+    flex:1 48%;
+    background-color: rgb(118,135,153);
+    margin:1%;
+    height:150px;
+    padding:10px;
+}
+
+
+/* status */
+.ishidden{
+    display: none !important;
+}
+
+.isInitial{
+    display: initial !important;
+}
+
+
+
+/*  Media Query */ 
+@media screen and (min-width: 800px) {
+    .nav-style > .nav-img,.nav-style > .nav-close-img{
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 799px),
+(max-width: 499px)
+ {
+
+    .nav-style > .nav-title{
+        width: 90%;
+    }
+
+    .nav-style > .nav-img{ 
+        width:10%;
+    }
+
+    .nav-style > .nav-img svg{
+        display: flex;
+        z-index:10;
+    }
+
+    
+
+    .nav-style > .nav-menu{
+        align-items: center;
+        flex: 1;
+        margin:0px;
+        position: fixed;
+        top:0;
+        right: 0;
+        width:200px;
+        height: 100vh;
+        padding:20px 10px;
+        background-color: #fff;
+        z-index: 2;
+        display: none;
+    }
+
+    .nav-style > .nav-menu ul{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-style > .nav-menu ul li{
+        margin:0 0 20px 0;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .main-content .content-box > div{
+        margin:4%;
+        flex:1 92%;
+    }
+}
