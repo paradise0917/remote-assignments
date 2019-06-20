@@ -7,12 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Week 2 - Remote Learning Assignment</h1>
 </body>
 </html>
 <script>
 
-//Assignment 1: Function and Array
+let Ans;
+// ------------------------------------------
+// Assignment 1: Function and Array
+// ------------------------------------------
+console.log("%c Assignment 1: Function and Array","color: #4f3a65; background-color: #dff0ea;");
 function max(...numbers){
     let maxVal=numbers[0];
     for(let i=1;i<numbers.length;i++){
@@ -21,58 +25,91 @@ function max(...numbers){
     return maxVal;
 }
 
-console.log(max(1, 2, 4, 5)); // result to 5
-console.log(max(5, 2, 7, 1, 6)); // result to 7
+Ans=max(1, 2, 4, 5); // result to 5
+console.log("Q1. max(1, 2, 4, 5)");
+console.log("A1. " ,Ans);
+
+Ans=max(5, 2, 7, 1, 6); // result to 7
+console.log("Q2. max(5, 2, 7, 1, 6)");
+console.log("A2. " ,Ans)
 
 
-//Assignment 2: Object
+// ------------------------------------------
+// Assignment 2: Object
+// ------------------------------------------
+console.log("%c Assignment 2: Object","color: #4f3a65; background-color: #dff0ea;");
 function calculate(args){
     let result;
-    if(args.op==="+"){result=args.n1+args.n2;}
-    else if(args.op==="-"){result=args.n1-args.n2;}
-    else{result="Not supported";}
+    if(args.op === "+"){
+        result = args.n1 + args.n2;
+    }
+    else if(args.op === "-"){
+        result = args.n1 - args.n2;
+    }
+    else{
+        result = "Not supported";
+    }
     return result;
 }
-//Method 1
-console.log(calculate({op:"+",n1:3,n2:5}));
 
-//Method 2
+// Method 1
+console.log("Method 1. ");
+Ans = calculate({op : "+" ,n1 : 3 ,n2 : 5});
+console.log("Method 1 Result. " ,Ans);
+
+// Method 2
 var Method2 = new Object();
 Method2.op = '+';
 Method2.n1 = 6;
 Method2.n2 = 10;
-console.log(calculate(Method2));
+console.log("Method 2. ");
+Ans = calculate(Method2);
+console.log("Method 2 Result. " ,Ans);
 
-//Method 3
+// Method 3
 function Method3(){
-    this.op="-";
-    this.n1=7;
-    this.n2=10;
+    this.op = "-";
+    this.n1 = 7;
+    this.n2 = 10;
     return this;
 }
-console.log(calculate(Method3()));
+console.log("Method 3. ");
+Ans = calculate(Method3())
+console.log("Method 3 Result. ",Ans);
 
-//Assignment 3: Function, Array, and Object
+// ------------------------------------------
+// Assignment 3: Function, Array, and Object
+// ------------------------------------------
+console.log("%c Assignment 3: Function, Array, and Object","color: #4f3a65; background-color: #dff0ea;");
 function avg(data){
     return data.products.reduce((total, next) => total + next.price, 0) / data.size;    
 }
 
-let avg_result=avg(
-    {
+console.log("Q1. return price average");
+Ans = avg({
         size:3,
         products:[
             {name:"Product 1",price:100},
             {name:"Product 2",price:700},
             {name:"Product 3",price:250}]
     });
+console.log("A1. " ,Ans);
 
-console.log(avg_result);
-
-//Assignment 5: Algorithm Practice 
+// ------------------------------------------
+// Assignment 5: Algorithm Practice 
+// ------------------------------------------
+console.log("%c Assignment 5: Algorithm Practice ","color: #4f3a65; background-color: #dff0ea;");
 function twoSum(nums,target){
-
+    for(let i=0;i<nums.length;i++){
+        for(let j=nums.length;j>i;j--){
+            if(nums[i]+nums[j]==target)
+                return [i,j];
+        }
+    }
 }
 
-twoSum([2, 7, 11, 15], 9);
+console.log("Q1. twoSum([2, 7, 11, 15], 9)");
+Ans = twoSum([2, 7, 11, 15], 9);
+console.log("A1. " ,Ans);
 
 </script>
