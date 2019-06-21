@@ -102,7 +102,7 @@ console.log("%c Assignment 5: Algorithm Practice ","color: #4f3a65; background-c
 function twoSum(nums,target){
     for(let i=0;i<nums.length;i++){
         for(let j=nums.length;j>i;j--){
-            if(nums[i]+nums[j]==target)
+            if(nums[i]+nums[j] === target)
                 return [i,j];
         }
     }
