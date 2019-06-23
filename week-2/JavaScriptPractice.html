@@ -115,11 +115,11 @@ function twoSum(nums,target){
         var v = nums[i];
 
         if(obj[target-v] >= 0){
-            // 如果 target - v可以在map中找到值x，代表之前已經出現過值x， target = x + v
+            // 如果 target - v可以在物件中找到值x，代表之前已經出現過值x， target = x + v
             // 因此回傳 x的位置與目前v的位置  
             return [obj[target-v],i];
         } else {
-            // 使用map儲存目前的數字與其位置  
+            // 使用物件儲存目前的數字與其位置  
             obj[v] = i;
         }
     }
