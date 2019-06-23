@@ -100,13 +100,29 @@ console.log("A1. " ,Ans);
 // ------------------------------------------
 console.log("%c Assignment 5: Algorithm Practice ","color: #4f3a65; background-color: #dff0ea;");
 function twoSum(nums,target){
-    for(let i=0;i<nums.length;i++){
-        for(let j=nums.length;j>i;j--){
-            if(nums[i]+nums[j] === target)
-                return [i,j];
+    // for(let i=0;i<nums.length;i++){
+    //     for(let j=nums.length;j>i;j--){
+    //         if(nums[i]+nums[j] === target)
+    //             return [i,j];
+    //     }
+    // }
+    // return "No matching items found in array.";
+
+    //  更好的解法
+    var obj = {};
+    for(var i = 0 ; i < nums.length ; i++)
+    {
+        var v = nums[i];
+
+        if(obj[target-v] >= 0){
+            // 如果 target - v可以在map中找到值x，代表之前已經出現過值x， target = x + v
+            // 因此回傳 x的位置與目前v的位置  
+            return [obj[target-v],i];
+        } else {
+            // 使用map儲存目前的數字與其位置  
+            obj[v] = i;
         }
     }
-    return "No matching items found in array.";
 }
 
 console.log("Q1. twoSum([2, 7, 11, 15], 9)");
