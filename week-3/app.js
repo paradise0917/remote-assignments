@@ -59,7 +59,6 @@ app.use(express.static('public'));
 // ------------------------------------
 app.get('/myName', (req, res) => {
     const name = req.cookies.name;
-    console.dir(name);
     if (name) {
         res.render('show', {'name' : name.toString()});
     } else {
