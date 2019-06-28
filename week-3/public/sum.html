@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 3 - Sum</title>
+    <style>
+        hr{
+            border: 0;
+            height: 1px;
+            border-bottom: solid 1px #d9d9d9;
+        }
+        .error{
+            color:crimson;
+        }
+    </style>
+</head>
+<body>
+    <h3>Assignment 3</h3>
+    <hr/>
+    <span>Please enter a number : </span>
+    <input id="input_num" type="number" min="1" step="1" value="1" onkeyup="CheckInputNumVal()">
+    <input type="button" value="Call API" onclick="CallAPI()"/><br>
+    <span id="errormsg" class="error"></span><br>
+    <span id="resultmsg"></span>
+</body>
+</html>
+<script>
+    let InputNum = document.querySelector("#input_num");
+    let ErrorMsg = document.querySelector("#errormsg");
+    let ResultMsg = document.querySelector("#resultmsg");
+
+    function CallAPI(){
+        
+        let GetVal = CheckInputNumVal();
+        if(GetVal !== false){
+            let src = "http://localhost:3000/getData?number="+GetVal;
+            fetch(src).then((res)=>{
+                return res.text(); 
+            }).then((result) => {
+                ResultMsg.textContent = result;
+            });
+        }
+        else{
+            //Pass to call API
+        }
+    }
+
+    //get and check user input number
+    function CheckInputNumVal(){
+        ClearMsgResult();
+        let Val = InputNum.value;
+        if(Val !== "" && isPostiveInteger(Val)){
+            return Val;
+        }
+        else{
+            ErrorMsg.textContent = "Please enter a positive integer greater than 0.";
+            return false;
+        }
+    }
+
+    //check is postive integer
+    function isPostiveInteger(str) {
+        return /^\+?(0|[1-9]\d*)$/.test(str);
+    }
+
+    //clear msg and result
+    function ClearMsgResult(){
+        ErrorMsg.textContent = "";
+        ResultMsg.textContent = "";
+    }
+</script>

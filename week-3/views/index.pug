@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+    head
+        title Hello Pug Index
+    body
+        header
+          h2 Assignment 4
+          hr
+        block content
+          form(action = '/trackName', method = 'get')
+            label Please enter your name : 
+            input(type='text', name='name') 
+            button(type = 'submit') Submit
+        footer
