@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 2</title>
+    <style>
+     html,body{
+         background: rgb(214,224,229);
+         background-image: linear-gradient(45deg, rgb(214,224,229) 0%, rgb(182.216.230) 99%, rgb(192,219,229) 100%);
+     }
+
+     hr{
+            border: 0;
+            height: 1px;
+            border-bottom: solid 1px #fff;
+        }
+    
+     #product{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
+     }
+
+     #product div{
+        flex-grow: 1;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 15px;
+        min-width: 300px;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 4px 18px rgba(135, 171, 191, 0.2);
+        position: relative;
+     }
+
+     #product div span{
+         display:block;
+     }
+
+     .product-name{
+         font-size: 1.2rem;
+         font-weight: bolder;
+         margin-bottom: 10px;
+         color: rgb(58,79,117);
+     }
+
+     .product-price{
+        font-size: 1.3rem;
+        font-weight: bolder;
+        color: rgb(135,171,191);
+        position: absolute;
+        right: 20px;
+        top: 45px;
+     }
+
+     .product-desc{
+         font-size: 0.9rem;
+         margin-bottom: 5px;
+         color: rgb(170,170,170);
+     }
+    </style>
+</head>
+<body>
+    <h3>Assignment 2</h3>
+    <hr/>
+    <div id="product"></div>
+</body>
+</html>
+<script>
+
+    //---------------------------------
+    //Assignment 2 : Callback Function and Advanced HTML DOM
+    //---------------------------------
+
+    function ajax(src, callback){
+
+        fetch(src).then((res) => {
+            return res.json(); 
+        }).then((result) => {
+            callback(result);
+        });
+
+    }
+
+    function render(data){
+        
+        let ProductDiv = document.querySelector("#product");
+        let innerDiv ,spanName ,spanPrice ,spanDescription;
+
+        data.forEach(item => {
+
+            innerDiv = document.createElement('div');
+            spanName = document.createElement('span');
+            spanPrice = document.createElement('span');
+            spanDescription = document.createElement('span');
+
+            spanName.textContent = item.name;
+            spanName.classList.add("product-name");
+            spanPrice.textContent = "$ "+item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            spanPrice.classList.add("product-price");
+            spanDescription.textContent = item.description;
+            spanDescription.classList.add("product-desc");
+
+            innerDiv.appendChild(spanName);
+            innerDiv.appendChild(spanDescription);
+            innerDiv.appendChild(spanPrice);
+
+            ProductDiv.appendChild(innerDiv);
+
+        });
+
+    }
+
+    ajax("https://cwpeng.github.io/live-records-samples/data/products.json",function(response){
+        render(response);
+    });
+    //you sholud get product information in JSON format and reneder data in the page
+
+
+
+</script>
