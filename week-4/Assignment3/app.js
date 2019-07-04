@@ -3,7 +3,7 @@ class Header extends React.Component {
 
     state = {
         title: "Welcome Message",
-        menuClass: "nav-menu ishidden",
+        menuClass: "nav-menu",
         closeBtnClass: "nav-close-img ishidden"
     }
 
