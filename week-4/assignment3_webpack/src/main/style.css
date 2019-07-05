@@ -1,0 +1,33 @@
+/*  Main Content Box */ 
+.main-content{
+    text-align: center;
+    justify-content:center;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.main-content .content-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.main-content .content-box > div{
+    flex:1 48%;
+    background-color: rgb(118,135,153);
+    margin:1%;
+    height:150px;
+    padding:10px;
+}
+
+/*  Media Query */ 
+@media screen and (max-width: 499px) {
+    .main-content .content-box > div{
+        margin:4%;
+        flex:1 92%;
+    }
+}

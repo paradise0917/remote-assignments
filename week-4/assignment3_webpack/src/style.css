@@ -1,0 +1,45 @@
+/*  Base Layout */
+
+*{
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size:1rem;
+    box-sizing: border-box;
+}
+
+html,body{
+    margin:0;
+}
+
+input[type=button]{
+    background-color: rgb(214,234,254);
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    width: 120px;
+    margin:20px;
+    cursor: pointer;
+}
+
+h3{
+    font-size: 1.3rem;
+    line-height: 1.7;
+}
+
+
+
+
+
+
+/* status */
+.ishidden{
+    display: none !important;
+}
+
+.isInitial{
+    display: initial !important;
+}
+
+
+
+
+
